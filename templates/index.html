@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Language Detection</h1>
+        <form method="POST">
+            <label for="user_input">Enter text:</label>
+            <textarea id="user_input" name="user_input" rows="4" cols="50" placeholder="Type your text here..."></textarea><br><br>
+            <input type="submit" value="Predict">
+        </form>
+        {% if prediction %}
+        <div class="result">
+            <h2>Prediction: <span>{{ prediction }}</span></h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
